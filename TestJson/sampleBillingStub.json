@@ -1,0 +1,50 @@
+{
+  "request": {
+    "urlPathTemplate": "{natcoCode}/chat/{conversationId}/message",
+    "method": "POST",
+    "headers": {
+      "Accept": {
+        "contains": "application/json"
+      },
+      "Content-Type": {
+        "equalTo": "application/json",
+        "caseInsensitive": true
+      }
+    },
+    "bodyPatterns": [
+      {
+        "matchesJsonPath": "$..profileId"
+      },
+      {
+        "matchesJsonPath": {
+          "expression": "$..content",
+          "contains": "my bill for"
+        }
+      },
+      {
+        "matchesJsonSchema": {}
+      }
+    ],
+    "multipartPatterns": [
+      {
+        "matchingType": "ANY",
+        "headers": {
+          "Content-Type": {
+            "contains": "application/json"
+          }
+        },
+        "bodyPatterns": [
+          {
+            "equalToJson": "{}"
+          }
+        ]
+      }
+    ]
+  },
+  "response": {
+    "headers": {
+      "Content-Type": "application/json"
+    },
+    "body": "{\n    \"chatResponseID\": \"ca15b2fd-bd63-42ac-a787-88d6f6fc4bf5\",\n    \"generatedAt\": \"2024-05-07T09:32:49Z\",\n    \"chatResponseStatus\": \"ongoing\",\n    \"chatTurnMetadata\": {\n        \"userIntent\": \"qa\",\n        \"topic\": \"unknown\",\n        \"chatSummary\": \"\",\n        \"authLevel\": 2\n    },\n    \"chatOutput\": {\n        \"content\": \"Your bill id $200\",\n        \"contentFormatType\": \"text\"\n    }\n}"
+  }
+}
