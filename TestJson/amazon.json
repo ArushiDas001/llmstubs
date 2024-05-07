@@ -1,0 +1,13 @@
+{
+    "request": {
+        "method": "GET",
+        "url": "/app/amazon"
+    },
+    "response": {
+        "status": 200,
+        "body": "Welcome to Amazon!",
+        "headers": {
+            "Content-Type": "text/plain"
+        }
+    }
+}
