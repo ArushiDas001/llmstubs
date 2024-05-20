@@ -1,0 +1,255 @@
+[
+  {
+    "request": {
+      "method": "POST",
+      "urlPathPattern": "/openai/deployments/[a-zA-Z0-9-]+/completions",
+      "queryParameters": {
+        "api-version": {
+          "matches": ".*"
+        }
+      },
+      "headers": {
+        "Content-Type": {
+          "matches": "application/json"
+        }
+      },
+      "bodyPatterns": [
+        {
+          "matchesJsonPath": "$.messages[?(@.role == 'user' && @.content =~ Hello)]"
+        }
+      ]
+    },
+    "response": {
+      "status": 200,
+      "headers": {
+        "Content-Type": "application/json"
+      },
+      "body": "{\n    \"id\": \"chatcmpl-9P1sucjJ1kmcF4FY6Qwz6Yjib517l\",\n    \"object\": \"chat.completion\",\n    \"created\": 1715752472,\n    \"model\": \"gpt-llm-mock\",\n    \"choices\": [\n        {\n            \"index\": 0,\n            \"message\": {\n                \"role\": \"assistant\",\n                \"content\": \", Hello! How can I assist you with your Deutsche Telekom services today?\"\n            },\n            \"finish_reason\": \"stop\"\n        }\n    ],\n    \"usage\": {\n        \"prompt_tokens\": 9,\n        \"completion_tokens\": 8,\n        \"total_tokens\": 17\n    },\n    \"system_fingerprint\": null\n}"
+    }
+  },
+  {
+    "request": {
+      "method": "POST",
+      "urlPathPattern": "/openai/deployments/[a-zA-Z0-9-]+/completions",
+      "queryParameters": {
+        "api-version": {
+          "matches": ".*"
+        }
+      },
+      "headers": {
+        "Content-Type": {
+          "matches": "application/json"
+        }
+      },
+      "bodyPatterns": [
+        {
+          "matchesJsonPath": "$.messages[?(@.role == 'user' && @.content =~ /What is my bill.*/)]"
+        }
+      ]
+    },
+    "response": {
+      "status": 200,
+      "headers": {
+        "Content-Type": "application/json"
+      },
+      "body": "{\n    \"id\": \"chatcmpl-9P1sucjJ1kmcF4FY6Qwz6Yjib517l\",\n    \"object\": \"chat.completion\",\n    \"created\": 1715752472,\n    \"model\": \"gpt-llm-mock\",\n    \"choices\": [\n        {\n            \"index\": 0,\n            \"message\": {\n                \"role\": \"assistant\",\n                \"content\": \", Select your desired service for which you want the bill \",\n\"options\":[\"Mobile\",\"Fixnet\"]\n            },\n            \"finish_reason\": \"stop\"\n        }\n    ],\n    \"usage\": {\n        \"prompt_tokens\": 9,\n        \"completion_tokens\": 8,\n        \"total_tokens\": 17\n    },\n    \"system_fingerprint\": null\n}"
+    }
+  },
+  {
+    "request": {
+      "method": "POST",
+      "urlPathPattern": "/openai/deployments/[a-zA-Z0-9-]+/completions",
+      "queryParameters": {
+        "api-version": {
+          "matches": ".*"
+        }
+      },
+      "headers": {
+        "Content-Type": {
+          "matches": "application/json"
+        }
+      },
+      "bodyPatterns": [
+        {
+          "matchesJsonPath": "$.messages[?(@.role == 'user' && @.content =~ /Fixnet.*/)]"
+        }
+      ]
+    },
+    "response": {
+      "status": 200,
+      "headers": {
+        "Content-Type": "application/json"
+      },
+      "body": "{\n    \"id\": \"chatcmpl-9P1sucjJ1kmcF4FY6Qwz6Yjib517l\",\n    \"object\": \"chat.completion\",\n    \"created\": 1715752472,\n    \"model\": \"gpt-llm-mock\",\n    \"choices\": [\n        {\n            \"index\": 0,\n            \"message\": {\n                \"role\": \"assistant\",\n                \"content\": \"Your Fixnet bill is 287 euro.Is there anything else needed?\"\n            },\n            \"finish_reason\": \"stop\"\n        }\n    ],\n    \"usage\": {\n        \"prompt_tokens\": 9,\n        \"completion_tokens\": 8,\n        \"total_tokens\": 17\n    },\n    \"system_fingerprint\": null\n}"
+    }
+  },
+  {
+    "request": {
+      "method": "POST",
+      "urlPathPattern": "/openai/deployments/[a-zA-Z0-9-]+/completions",
+      "queryParameters": {
+        "api-version": {
+          "matches": ".*"
+        }
+      },
+      "headers": {
+        "Content-Type": {
+          "matches": "application/json"
+        }
+      },
+      "bodyPatterns": [
+        {
+          "matchesJsonPath": "$.messages[?(@.role == 'user' && @.content =~ /Mobile.*/)]"
+        }
+      ]
+    },
+    "response": {
+      "status": 200,
+      "headers": {
+        "Content-Type": "application/json"
+      },
+      "body": "{\n    \"id\": \"chatcmpl-9P1sucjJ1kmcF4FY6Qwz6Yjib517l\",\n    \"object\": \"chat.completion\",\n    \"created\": 1715752472,\n    \"model\": \"gpt-llm-mock\",\n    \"choices\": [\n        {\n            \"index\": 0,\n            \"message\": {\n                \"role\": \"assistant\",\n                \"content\": \"Your Mobile bill is 300 euro.Is there anything else needed?\"\n            },\n            \"finish_reason\": \"stop\"\n        }\n    ],\n    \"usage\": {\n        \"prompt_tokens\": 9,\n        \"completion_tokens\": 8,\n        \"total_tokens\": 17\n    },\n    \"system_fingerprint\": null\n}"
+    }
+  },
+  {
+    "request": {
+      "method": "POST",
+      "urlPathPattern": "/openai/deployments/[a-zA-Z0-9-]+/completions",
+      "queryParameters": {
+        "api-version": {
+          "matches": ".*"
+        }
+      },
+      "headers": {
+        "Content-Type": {
+          "matches": "application/json"
+        }
+      },
+      "bodyPatterns": [
+        {
+          "matchesJsonPath": "$.messages[?(@.role == 'user' && @.content =~ /What is my account balance.*/)]"
+        }
+      ]
+    },
+    "response": {
+      "status": 200,
+      "headers": {
+        "Content-Type": "application/json"
+      },
+      "body": "{\n    \"id\": \"chatcmpl-9P1sucjJ1kmcF4FY6Qwz6Yjib517l\",\n    \"object\": \"chat.completion\",\n    \"created\": 1715752472,\n    \"model\": \"gpt-llm-mock\",\n    \"choices\": [\n        {\n            \"index\": 0,\n            \"message\": {\n                \"role\": \"assistant\",\n                \"content\": \"You have credit of 24 EUR\"            },\n            \"finish_reason\": \"stop\"\n        }\n    ],\n    \"usage\": {\n        \"prompt_tokens\": 9,\n        \"completion_tokens\": 8,\n        \"total_tokens\": 17\n    },\n    \"system_fingerprint\": null\n}"
+    }
+  },
+  {
+    "request": {
+      "method": "POST",
+      "urlPathPattern": "/openai/deployments/[a-zA-Z0-9-]+/completions",
+      "queryParameters": {
+        "api-version": {
+          "matches": ".*"
+        }
+      },
+      "headers": {
+        "Content-Type": {
+          "matches": "application/json"
+        }
+      },
+      "bodyPatterns": [
+        {
+          "matchesJsonPath": "$.messages[?(@.role == 'user' && @.content =~ /What is the URL to disney.*/)]"
+        }
+      ]
+    },
+    "response": {
+      "status": 200,
+      "headers": {
+        "Content-Type": "application/json"
+      },
+      "body": "{\n    \"id\": \"chatcmpl-9P1sucjJ1kmcF4FY6Qwz6Yjib517l\",\n    \"object\": \"chat.completion\",\n    \"created\": 1715752472,\n    \"model\": \"gpt-llm-mock\",\n    \"choices\": [\n        {\n            \"index\": 0,\n            \"message\": {\n                \"role\": \"assistant\",\n                \"content\": \"I cannot help you with that\"            },\n            \"finish_reason\": \"stop\"\n        }\n    ],\n    \"usage\": {\n        \"prompt_tokens\": 9,\n        \"completion_tokens\": 8,\n        \"total_tokens\": 17\n    },\n    \"system_fingerprint\": null\n}"
+    }
+  },
+  {
+    "request": {
+      "method": "POST",
+      "urlPathPattern": "/openai/deployments/[a-zA-Z0-9-]+/completions",
+      "queryParameters": {
+        "api-version": {
+          "matches": ".*"
+        }
+      },
+      "headers": {
+        "Content-Type": {
+          "matches": "application/json"
+        }
+      },
+      "bodyPatterns": [
+        {
+          "matchesJsonPath": "$.messages[?(@.role == 'user' && @.content =~ /My Email does not work.*/)]"
+        }
+      ]
+    },
+    "response": {
+      "status": 200,
+      "headers": {
+        "Content-Type": "application/json"
+      },
+      "body": "{\n    \"id\": \"chatcmpl-9P1sucjJ1kmcF4FY6Qwz6Yjib517l\",\n    \"object\": \"chat.completion\",\n    \"created\": 1715752472,\n    \"model\": \"gpt-llm-mock\",\n    \"choices\": [\n        {\n            \"index\": 0,\n            \"message\": {\n                \"role\": \"assistant\",\n                \"content\": \"I cannot help you with that\"            },\n            \"finish_reason\": \"stop\"\n        }\n    ],\n    \"usage\": {\n        \"prompt_tokens\": 9,\n        \"completion_tokens\": 8,\n        \"total_tokens\": 17\n    },\n    \"system_fingerprint\": null\n}"
+    }
+  },
+  {
+    "request": {
+      "method": "POST",
+      "urlPathPattern": "/openai/deployments/[a-zA-Z0-9-]+/completions",
+      "queryParameters": {
+        "api-version": {
+          "matches": ".*"
+        }
+      },
+      "headers": {
+        "Content-Type": {
+          "matches": "application/json"
+        }
+      },
+      "bodyPatterns": [
+        {
+          "matchesJsonPath": "$.messages[?(@.role == 'user' && @.content =~ /Thank you for the help.*/)]"
+        }
+      ]
+    },
+    "response": {
+      "status": 200,
+      "headers": {
+        "Content-Type": "application/json"
+      },
+      "body": "{\n    \"id\": \"chatcmpl-9P1sucjJ1kmcF4FY6Qwz6Yjib517l\",\n    \"object\": \"chat.completion\",\n    \"created\": 1715752472,\n    \"model\": \"gpt-llm-mock\",\n    \"choices\": [\n        {\n            \"index\": 0,\n            \"message\": {\n                \"role\": \"assistant\",\n                \"content\": \"Query resolved\"            },\n            \"finish_reason\": \"stop\"\n        }\n    ],\n    \"usage\": {\n        \"prompt_tokens\": 9,\n        \"completion_tokens\": 8,\n        \"total_tokens\": 17\n    },\n    \"system_fingerprint\": null\n}"
+    }
+  },
+  {
+    "request": {
+      "method": "POST",
+      "urlPathPattern": "/openai/deployments/[a-zA-Z0-9-]+/completions",
+      "queryParameters": {
+        "api-version": {
+          "matches": ".*"
+        }
+      },
+      "headers": {
+        "Content-Type": {
+          "matches": "application/json"
+        }
+      },
+      "bodyPatterns": [
+        {
+          "matchesJsonPath": "$.messages[?(@.role == 'user' && @.content =~ /I want to talk to an agent.*/)]"
+        }
+      ]
+    },
+    "response": {
+      "status": 200,
+      "headers": {
+        "Content-Type": "application/json"
+      },
+      "body": "{\n    \"id\": \"chatcmpl-9P1sucjJ1kmcF4FY6Qwz6Yjib517l\",\n    \"object\": \"chat.completion\",\n    \"created\": 1715752472,\n    \"model\": \"gpt-llm-mock\",\n    \"choices\": [\n        {\n            \"index\": 0,\n            \"message\": {\n                \"role\": \"assistant\",\n                \"content\": \"Agent Handover\"            },\n            \"finish_reason\": \"stop\"\n        }\n    ],\n    \"usage\": {\n        \"prompt_tokens\": 9,\n        \"completion_tokens\": 8,\n        \"total_tokens\": 17\n    },\n    \"system_fingerprint\": null\n}"
+    }
+  }
+]
+
