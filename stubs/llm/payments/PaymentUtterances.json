@@ -1,7 +1,7 @@
 {
   "request": {
     "method": "POST",
-    "urlPath": "/openai/deployments/[a-zA-Z0-9-]+/completions",
+    "urlPathPattern": "/openai/deployments/[a-zA-Z0-9-]+/completions",
     "queryParameters": {
       "api-version": {
         "matches": ".*"
@@ -14,7 +14,7 @@
     },
     "bodyPatterns": [
       {
-        "matchesJsonPath": "$.messages[?(@.role == 'user' && @.content =~ /.*I want to update my IBAN*/)]"
+        "matchesJsonPath": "$.messages[?(@.role == 'user' && @.content =~ /I want to update my IBAN.*/i)]"
       }
     ]
   },
