@@ -14,7 +14,7 @@
     },
     "bodyPatterns": [
       {
-        "matchesJsonPath": "$.messages[?(@.role == 'user' && @.content =~ Hello)]"
+        "matchesJsonPath": "$.messages[?(@.role == 'user' && @.content =~ /Hello.*/i)]"
       }
     ]
   },
