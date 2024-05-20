@@ -1,4 +1,5 @@
-[
+{
+  "mappings":[
     {
       "request": {
         "method": "POST",
@@ -116,5 +117,5 @@
         "body":"{\n    \"id\": \"chatcmpl-9P1sucjJ1kmcF4FY6Qwz6Yjib517l\",\n    \"object\": \"chat.completion\",\n    \"created\": 1715752472,\n    \"model\": \"gpt-llm-mock\",\n    \"choices\": [\n        {\n            \"index\": 0,\n            \"message\": {\n                \"role\": \"assistant\",\n                \"content\": \"Please contact customer service agent.Is there anything else needed?\"\n            },\n            \"finish_reason\": \"stop\"\n        }\n    ],\n    \"usage\": {\n        \"prompt_tokens\": 9,\n        \"completion_tokens\": 8,\n        \"total_tokens\": 17\n    },\n    \"system_fingerprint\": null\n}"
       }
     }
-
   ]
+}
