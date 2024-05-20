@@ -1,14 +1,23 @@
 {
   "request": {
-    "urlPathTemplate": "{natcoCode}/chat/{conversationId}/message",
+    "urlPathTemplate": "/assistants/v1/{natcoCode}/chat/{conversationID}/message",
     "method": "POST",
     "headers": {
       "Accept": {
-        "contains": "application/json"
+        "contains": "*/*"
       },
       "Content-Type": {
         "equalTo": "application/json",
         "caseInsensitive": true
+      }
+
+    },
+    "pathParameters" : {
+      "natcoCode" : {
+        "equalTo" : "de"
+      },
+      "conversationID" : {
+        "equalTo" : "[a-fA-F0-9]{8}-[a-fA-F0-9]{4}-4[a-fA-F0-9]{3}-[89abAB][a-fA-F0-9]{3}-[a-fA-F0-9]{12}"
       }
     },
     "bodyPatterns": [
@@ -18,26 +27,11 @@
       {
         "matchesJsonPath": {
           "expression": "$..content",
-          "contains": "my bill for"
+          "contains": "my bill"
         }
       },
       {
         "matchesJsonSchema": {}
-      }
-    ],
-    "multipartPatterns": [
-      {
-        "matchingType": "ANY",
-        "headers": {
-          "Content-Type": {
-            "contains": "application/json"
-          }
-        },
-        "bodyPatterns": [
-          {
-            "equalToJson": "{}"
-          }
-        ]
       }
     ]
   },
